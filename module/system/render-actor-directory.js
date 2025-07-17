@@ -7,12 +7,12 @@ import { createWarband } from "../generators/warband.js";
  * @param {AppDirectory} app_directory
  */
 export const renderActorDirectory = () => {
-  
-  if(document.querySelector(".mtl-actor-buttons")) {
+  console.log("renderActorDirectory, return ");
+  if (document.querySelector(".mythic-bastionland.directory-header")) {
     // If the buttons already exist, do not add them again
     return;
   }
-  
+
   if (game.user.can("ACTOR_CREATE")) {
 
     const sectionElement = document.querySelector("#actors");
@@ -22,7 +22,6 @@ export const renderActorDirectory = () => {
     header.classList.add("flexcol");
     header.classList.add("mythic-bastionland");
 
-    
     const existingButtons = sectionElement.querySelector(".directory-header");
     sectionElement.insertBefore(header, existingButtons);
 
